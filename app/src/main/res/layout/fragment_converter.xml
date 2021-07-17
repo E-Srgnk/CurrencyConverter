@@ -1,8 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
     tools:context=".views.ConverterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firstCurrencyLayout"
+        style="@style/CurrencyLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/firstCurrency"
+            style="@style/CurrencyTextView"
+            android:text="@string/usd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/firstCurrencyValue"
+            style="@style/CurrencyValueTextView"
+            android:text="@string/zero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/firstCurrency"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondCurrencyLayout"
+        style="@style/CurrencyLayout"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstCurrencyLayout">
+
+        <TextView
+            android:id="@+id/secondCurrency"
+            style="@style/CurrencyTextView"
+            android:text="@string/rub"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/secondCurrencyValue"
+            style="@style/CurrencyValueTextView"
+            android:text="@string/zero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondCurrency"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="@color/dark_gray"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondCurrencyLayout">
+
+        <Button
+            android:id="@+id/clear_all"
+            style="@style/CommonButton"
+            android:layout_marginStart="0dp"
+            android:text="@string/clear"
+            android:theme="@style/GrayButton" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/CommonButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:background="@color/gray">
+
+            <ImageView
+                android:id="@+id/clear_last_symbol"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <Button
+            android:id="@+id/seven"
+            style="@style/CommonButton"
+            android:layout_marginStart="0dp"
+            android:text="@string/seven"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/eight"
+            style="@style/CommonButton"
+            android:text="@string/eight"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/nine"
+            style="@style/CommonButton"
+            android:text="@string/nine"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/four"
+            style="@style/CommonButton"
+            android:layout_marginStart="0dp"
+            android:text="@string/four"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/five"
+            style="@style/CommonButton"
+            android:text="@string/five"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/six"
+            style="@style/CommonButton"
+            android:text="@string/six"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/one"
+            style="@style/CommonButton"
+            android:layout_marginStart="0dp"
+            android:text="@string/one"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/two"
+            style="@style/CommonButton"
+            android:text="@string/two"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/tree"
+            style="@style/CommonButton"
+            android:text="@string/tree"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/zero"
+            style="@style/CommonButton"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:layout_marginStart="0dp"
+            android:text="@string/zero"
+            android:theme="@style/LightGrayButton" />
+
+        <Button
+            android:id="@+id/comma"
+            style="@style/CommonButton"
+            android:text="@string/comma"
+            android:theme="@style/LightGrayButton" />
+
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/refreshCurrencyRate"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_refresh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_last_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17.07.21 15:04"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
