@@ -21,6 +21,27 @@ class ConverterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentConverterBinding.inflate(inflater, container, false)
+
+        viewModel.enteredValue.observe(viewLifecycleOwner) {
+            binding.firstCurrencyValue.text = it.toString()
+        }
+
+        binding.apply {
+            clearAll.setOnClickListener { viewModel.clearAll() }
+            clearLastSymbol.setOnClickListener { viewModel.clearLast() }
+            comma.setOnClickListener { viewModel.addSymbol(",") }
+            one.setOnClickListener { viewModel.addSymbol("1") }
+            two.setOnClickListener { viewModel.addSymbol("2") }
+            tree.setOnClickListener { viewModel.addSymbol("3") }
+            four.setOnClickListener { viewModel.addSymbol("4") }
+            five.setOnClickListener { viewModel.addSymbol("5") }
+            six.setOnClickListener { viewModel.addSymbol("6") }
+            seven.setOnClickListener { viewModel.addSymbol("7") }
+            eight.setOnClickListener { viewModel.addSymbol("8") }
+            nine.setOnClickListener { viewModel.addSymbol("9") }
+            zero.setOnClickListener { viewModel.addSymbol("0") }
+        }
+
         return binding.root
     }
 
