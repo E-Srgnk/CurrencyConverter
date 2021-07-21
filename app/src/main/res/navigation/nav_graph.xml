@@ -9,6 +9,14 @@
         android:id="@+id/ConverterFragment"
         android:name="com.srgnk.currencyconverter.views.ConverterFragment"
         tools:layout="@layout/fragment_converter">
+
+        <action
+            android:id="@+id/action_ConverterFragment_to_SelectCurrencyFragment"
+            app:destination="@+id/SelectCurrencyFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/SelectCurrencyFragment"
+        android:name="com.srgnk.currencyconverter.views.SelectCurrencyFragment"
+        tools:layout="@layout/fragment_select_currency" />
 </navigation>
